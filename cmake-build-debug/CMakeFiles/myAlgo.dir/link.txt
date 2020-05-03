@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/myAlgo.dir/main.cpp.o  -o myAlgo   -L/home/berat/lib  -Wl,-rpath,/home/berat/lib:/home/berat/CLionProjects/myAlgo/cmake-build-debug -ltrading -lm libdie.so libtesttrading.so libfix_common.so libfastlog.so -ltrading 

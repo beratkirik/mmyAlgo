@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libdie.so -o libdie.so CMakeFiles/die.dir/die.c.o   -L/home/berat/lib  -Wl,-rpath,/home/berat/lib -ltrading 

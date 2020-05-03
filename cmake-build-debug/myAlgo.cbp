@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="myAlgo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="myAlgo">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/myAlgo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 myAlgo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="myAlgo/fast">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/myAlgo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 myAlgo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="die">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libdie.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 die"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="die/fast">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libdie.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 die/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fix_common">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libfix_common.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 fix_common"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fix_common/fast">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libfix_common.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 fix_common/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testtrading">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libtesttrading.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 testtrading"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testtrading/fast">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libtesttrading.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/berat/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 testtrading/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fastlog">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libfastlog.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 fastlog"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fastlog/fast">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libfastlog.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 fastlog/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/die.c">
+			<Option target="die"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/die.h">
+			<Option target="die"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.cpp">
+			<Option target="fastlog"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.h">
+			<Option target="fastlog"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/fastlog_utils.h">
+			<Option target="fastlog"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/fix_common.c">
+			<Option target="fix_common"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/fix_common.h">
+			<Option target="fix_common"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/main.cpp">
+			<Option target="myAlgo"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/test.c">
+			<Option target="testtrading"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/test.h">
+			<Option target="testtrading"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

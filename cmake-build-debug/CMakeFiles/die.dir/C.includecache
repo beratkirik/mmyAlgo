@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/berat/CLionProjects/myAlgo/die.c
+die.h
+/home/berat/CLionProjects/myAlgo/die.h
+stdlib.h
+-
+stdarg.h
+-
+stdio.h
+-
+
+/home/berat/CLionProjects/myAlgo/die.h
+

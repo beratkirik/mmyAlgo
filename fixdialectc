@@ -1,0 +1,102 @@
+#!/usr/bin/env python
+
+import argparse
+import yaml
+import re
+
+parser = argparse.ArgumentParser(description='Generate FIX dialect C source files.')
+parser.add_argument('--input-file', help="input file")
+parser.add_argument('--header-path', help="output header path")
+parser.add_argument('--source-path', help="output source path")
+
+args = parser.parse_args()
+
+data = yaml.load(open(args.input_file, 'r'))
+
+name = data["name"]
+base_protocol = data["base_protocol"]
+
+header_filename = "%s/%s_fix.h" % (args.header_path, name)
+source_filename = "%s/%s_fix.c" % (args.source_path, name)
+
+#
+# Header file:
+#
+with open(header_filename, 'w') as file:
+  guard = "LIBTRADING_%s_FIX_H" % name.upper()
+
+  #
+  # Heading:
+  #
+  file.write("#ifndef %s\n" % guard)
+  file.write("#define %s\n" % guard)
+  file.write("\n")
+  file.write("#ifdef __cplusplus\n")
+  file.write("extern \"C\" {\n")
+  file.write("#endif\n")
+  file.write("\n")
+  file.write("#include \"libtrading/proto/fix_session.h\"\n")
+  file.write("\n")
+
+  #
+  # Dialect:
+  #
+  file.write("extern struct fix_dialect %s_fix_dialect;\n" % name)
+  file.write("\n")
+
+  #
+  # Tags:
+  #
+  file.write("enum %s_fix_tag {\n" % name)
+  for tag, desc in data["tags"].items():
+    tag, num = re.findall(r'(.*)\((.*)\)', tag)[0]
+    file.write("\t%s_TAG_%s = %s,\n" % (name.upper(), tag, num))
+
+  file.write("};\n")
+  file.write("\n")
+
+  #
+  # Footer:
+  #
+  file.write("#ifdef __cplusplus\n")
+  file.write("}\n")
+  file.write("#endif\n")
+  file.write("\n")
+  file.write("#endif /* %s */\n" % (guard))
+
+#
+# Source file:
+#
+
+with open(source_filename, 'w') as file:
+  #
+  # Heading
+  #
+  file.write("#include \"libtrading/proto/%s_fix.h\"\n" % name)
+  file.write("\n")
+  file.write("#include \"libtrading/proto/fix_message.h\"\n")
+  file.write("\n")
+
+  #
+  # Tag type:
+  #
+  file.write("static enum fix_type %s_fix_tag_type(int tag)\n" % name)
+  file.write("{\n")
+  file.write("\tswitch (tag) {\n")
+  for tag, desc in data["tags"].items():
+    tag, num = re.findall(r'(.*)\((.*)\)', tag)[0]
+    t = desc["type"]
+    file.write("\tcase %s_TAG_%s: return FIX_TYPE_%s;\n" % (name.upper(), tag, t.upper()))
+  file.write("\tdefault: return FIX_TYPE_STRING;\n")
+  file.write("\t}\n")
+  file.write("}\n")
+  file.write("\n")
+
+  #
+  # Dialect:
+  #
+  file.write("struct fix_dialect %s_fix_dialect = {\n" % name)
+  file.write("\t.version = %s,\n" % base_protocol)
+  file.write("\t.tag_type = %s_fix_tag_type,\n" % name)
+  file.write("};\n")
+  file.write("\n")

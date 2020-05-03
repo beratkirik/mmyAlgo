@@ -1,0 +1,7 @@
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/myAlgo.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/die.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/fix_common.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/testtrading.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/fastlog.dir

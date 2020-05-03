@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/berat/CLionProjects/myAlgo/test.c
+libtrading/proto/fix_message.h
+-
+inttypes.h
+-
+string.h
+-
+stdlib.h
+-
+stdio.h
+-
+test.h
+/home/berat/CLionProjects/myAlgo/test.h
+
+/home/berat/CLionProjects/myAlgo/test.h
+
+/home/berat/include/libtrading/proto/fix_message.h
+sys/uio.h
+-
+stdbool.h
+-
+stddef.h
+-
+stdint.h
+-
+time.h
+-
+

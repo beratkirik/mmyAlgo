@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libfix_common.so -o libfix_common.so CMakeFiles/fix_common.dir/fix_common.c.o   -L/home/berat/lib  -Wl,-rpath,/home/berat/lib -ltrading 

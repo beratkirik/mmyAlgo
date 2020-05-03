@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.cpp
+fastlog_filebuffer.h
+/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.h
+fastlog_utils.h
+/home/berat/CLionProjects/myAlgo/fastlog_utils.h
+string.h
+-
+sys/mman.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+unistd.h
+-
+stdexcept
+-
+atomic
+-
+sstream
+-
+time.h
+-
+
+/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.h
+memory
+-
+string
+-
+
+/home/berat/CLionProjects/myAlgo/fastlog_utils.h
+memory
+-
+

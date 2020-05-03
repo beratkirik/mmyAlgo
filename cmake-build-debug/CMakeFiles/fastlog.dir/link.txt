@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libfastlog.so -o libfastlog.so CMakeFiles/fastlog.dir/fastlog_filebuffer.cpp.o 
