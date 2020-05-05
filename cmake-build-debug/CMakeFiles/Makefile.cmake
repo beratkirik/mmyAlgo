@@ -52,5 +52,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/die.dir/DependInfo.cmake"
   "CMakeFiles/fix_common.dir/DependInfo.cmake"
   "CMakeFiles/testtrading.dir/DependInfo.cmake"
-  "CMakeFiles/fastlog.dir/DependInfo.cmake"
+  "CMakeFiles/nanolog.dir/DependInfo.cmake"
   )

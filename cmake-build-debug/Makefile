@@ -163,17 +163,44 @@ testtrading/fast:
 .PHONY : testtrading/fast
 
 #=============================================================================
-# Target rules for targets named fastlog
+# Target rules for targets named nanolog
 
 # Build rule for target.
-fastlog: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fastlog
-.PHONY : fastlog
+nanolog: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nanolog
+.PHONY : nanolog
 
 # fast build rule for target.
-fastlog/fast:
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/build
-.PHONY : fastlog/fast
+nanolog/fast:
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/build
+.PHONY : nanolog/fast
+
+NanoLog.o: NanoLog.cpp.o
+
+.PHONY : NanoLog.o
+
+# target to build an object file
+NanoLog.cpp.o:
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/NanoLog.cpp.o
+.PHONY : NanoLog.cpp.o
+
+NanoLog.i: NanoLog.cpp.i
+
+.PHONY : NanoLog.i
+
+# target to preprocess a source file
+NanoLog.cpp.i:
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/NanoLog.cpp.i
+.PHONY : NanoLog.cpp.i
+
+NanoLog.s: NanoLog.cpp.s
+
+.PHONY : NanoLog.s
+
+# target to generate assembly for a file
+NanoLog.cpp.s:
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/NanoLog.cpp.s
+.PHONY : NanoLog.cpp.s
 
 die.o: die.c.o
 
@@ -201,33 +228,6 @@ die.s: die.c.s
 die.c.s:
 	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/die.c.s
 .PHONY : die.c.s
-
-fastlog_filebuffer.o: fastlog_filebuffer.cpp.o
-
-.PHONY : fastlog_filebuffer.o
-
-# target to build an object file
-fastlog_filebuffer.cpp.o:
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/fastlog_filebuffer.cpp.o
-.PHONY : fastlog_filebuffer.cpp.o
-
-fastlog_filebuffer.i: fastlog_filebuffer.cpp.i
-
-.PHONY : fastlog_filebuffer.i
-
-# target to preprocess a source file
-fastlog_filebuffer.cpp.i:
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/fastlog_filebuffer.cpp.i
-.PHONY : fastlog_filebuffer.cpp.i
-
-fastlog_filebuffer.s: fastlog_filebuffer.cpp.s
-
-.PHONY : fastlog_filebuffer.s
-
-# target to generate assembly for a file
-fastlog_filebuffer.cpp.s:
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/fastlog_filebuffer.cpp.s
-.PHONY : fastlog_filebuffer.cpp.s
 
 fix_common.o: fix_common.c.o
 
@@ -322,13 +322,13 @@ help:
 	@echo "... die"
 	@echo "... fix_common"
 	@echo "... testtrading"
-	@echo "... fastlog"
+	@echo "... nanolog"
+	@echo "... NanoLog.o"
+	@echo "... NanoLog.i"
+	@echo "... NanoLog.s"
 	@echo "... die.o"
 	@echo "... die.i"
 	@echo "... die.s"
-	@echo "... fastlog_filebuffer.o"
-	@echo "... fastlog_filebuffer.i"
-	@echo "... fastlog_filebuffer.s"
 	@echo "... fix_common.o"
 	@echo "... fix_common.i"
 	@echo "... fix_common.s"

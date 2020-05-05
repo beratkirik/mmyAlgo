@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/berat/CLionProjects/myAlgo/NanoLog.hpp
+cstdint
+-
+memory
+-
+string
+-
+iosfwd
+-
+type_traits
+-
+
 /home/berat/CLionProjects/myAlgo/fix_client.h
 
 /home/berat/CLionProjects/myAlgo/fix_common.h
@@ -15,6 +27,8 @@ libtrading/array.h
 /home/berat/CLionProjects/myAlgo/libtrading/array.h
 
 /home/berat/CLionProjects/myAlgo/main.cpp
+NanoLog.hpp
+/home/berat/CLionProjects/myAlgo/NanoLog.hpp
 fix_common.h
 /home/berat/CLionProjects/myAlgo/fix_common.h
 libtrading/compat.h
@@ -35,27 +49,27 @@ arpa/inet.h
 -
 sys/types.h
 -
-inttypes.h
+cinttypes
 -
 libgen.h
 -
-signal.h
+csignal
 -
-stdlib.h
+cstdlib
 -
-string.h
+cstring
 -
 unistd.h
 -
-errno.h
+cerrno
 -
-float.h
+cfloat
 -
 netdb.h
 -
-stdio.h
+cstdio
 -
-math.h
+cmath
 -
 fix_client.h
 /home/berat/CLionProjects/myAlgo/fix_client.h

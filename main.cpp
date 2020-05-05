@@ -1,29 +1,36 @@
+#include "NanoLog.hpp"
+extern "C" {
 #include "fix_common.h"
-
 #include "libtrading/compat.h"
 #include "libtrading/array.h"
 #include "libtrading/time.h"
 #include "libtrading/die.h"
-
+}
 #include <netinet/tcp.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <sys/types.h>
-#include <inttypes.h>
+#include <cinttypes>
 #include <libgen.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
 #include <unistd.h>
-#include <errno.h>
-#include <float.h>
+#include <cerrno>
+#include <cfloat>
 #include <netdb.h>
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 
+extern "C" {
 #include "fix_client.h"
 #include "test.h"
+}
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 static const char *program;
 static sig_atomic_t stop;
@@ -59,13 +66,17 @@ static int fix_logout_send(struct fix_session *session, const char *text)
 
     if (!text)
         nr_fields--;
-
+//  struct yapısı değiştirildi !!
     struct fix_message fm{};
     fm.type		    = FIX_MSG_TYPE_LOGOUT;
     fm.nr_fields	= nr_fields;
     fm.fields		= fields;
     logout_msg	= fm;
-
+    //logout_msg	= (struct fix_message) {
+    //        .type		= FIX_MSG_TYPE_LOGOUT,
+    //        .nr_fields	= static_cast<unsigned long>(nr_fields),
+    //        .fields		= fields,
+    //};
 
     return fix_session_send(session, &logout_msg, 0);
 }
@@ -280,7 +291,7 @@ static unsigned long fix_new_order_single_fields(struct fix_session *session, st
 
     fields[nr++] = FIX_STRING_FIELD(TransactTime, session->str_now);
     fields[nr++] = FIX_STRING_FIELD(ClOrdID, "ClOrdID");
-    fields[nr++] = FIX_STRING_FIELD(Symbol, "Symbol");
+    fields[nr++] = FIX_STRING_FIELD(Symbol, "GARAN");
     fields[nr++] = FIX_FLOAT_FIELD(OrderQty, 100);
     fields[nr++] = FIX_STRING_FIELD(OrdType, "2");
     fields[nr++] = FIX_STRING_FIELD(Side, "1");
@@ -316,17 +327,18 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
     }
 
     session	= fix_session_new(cfg);
+    fprintf(stderr,"Session is taken.\n");
     if (!session) {
         fprintf(stderr, "FIX session cannot be created\n");
         goto exit;
     }
-
+    fprintf(stderr,"Session is valid\n");
     ret = fix_session_logon(session);
     if (ret) {
         fprintf(stderr, "Client Logon FAILED\n");
         goto exit;
     }
-
+    fprintf(stderr,"Session is valid\n");
     fprintf(stdout, "Client Logon OK\n");
 
     ret = -1;
@@ -336,7 +348,7 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
         fprintf(stderr, "Cannot allocate memory\n");
         goto exit;
     }
-
+//    fprintf(stderr, "System can allocate memory\n");
     nr = fix_new_order_single_fields(session, fields);
 
     min_usec	= DBL_MAX;
@@ -355,7 +367,7 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
     }
 
     for (i = 0; i < orders; i++) {
-        struct timespec before, after;
+        struct timespec before{}, after{};
         uint64_t elapsed_usec;
 
         clock_gettime(CLOCK_MONOTONIC, &before);
@@ -421,7 +433,7 @@ static int socket_setopt(int sockfd, int level, int optname, int optval)
 
 static enum fix_client_mode strclientmode(const char *mode)
 {
-    enum fix_client_mode m;
+    int m;
 
     if (!strcmp(mode, "session"))
         return FIX_CLIENT_SESSION;
@@ -430,14 +442,17 @@ static enum fix_client_mode strclientmode(const char *mode)
     else if (!strcmp(mode, "order"))
         return FIX_CLIENT_ORDER;
 
-    if (sscanf(mode, "%u", &m) != 1)
+    int ival = 0;
+    sscanf(mode, "%d", &ival);
+    m = static_cast<fix_client_mode>(ival);
+    if (m != 1)
         return FIX_CLIENT_SCRIPT;
 
     switch (m) {
         case FIX_CLIENT_SESSION:
         case FIX_CLIENT_SCRIPT:
         case FIX_CLIENT_ORDER:
-            return m;
+            return static_cast<fix_client_mode>(m);
         default:
             break;
     }
@@ -474,8 +489,13 @@ int main(int argc, char *argv[])
     int ret = 0;
     char **ap;
     int opt;
-
-    program = basename(argv[0]);
+    nanolog::initialize(nanolog::GuaranteedLogger(), "/tmp/", "nanolog", 1);
+    for (int i = 0; i < 5; ++i)
+    {
+        LOG_INFO << "Sample NanoLog: " << i;
+    }
+    nanolog::set_log_level(nanolog::LogLevel::CRIT);
+    LOG_WARN << "This log line will not be logged since we are at loglevel = CRIT";
 
     while ((opt = getopt(argc, argv, "f:h:p:d:s:t:m:n:o:r:w:")) != -1) {
         switch (opt) {
@@ -595,5 +615,10 @@ int main(int argc, char *argv[])
     if (close(cfg.sockfd) < 0)
         die("close");
 
+
     return ret;
 }
+
+#ifdef __cplusplus
+}
+#endif

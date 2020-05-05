@@ -57,7 +57,7 @@ all: CMakeFiles/myAlgo.dir/all
 all: CMakeFiles/die.dir/all
 all: CMakeFiles/fix_common.dir/all
 all: CMakeFiles/testtrading.dir/all
-all: CMakeFiles/fastlog.dir/all
+all: CMakeFiles/nanolog.dir/all
 
 .PHONY : all
 
@@ -71,7 +71,7 @@ clean: CMakeFiles/myAlgo.dir/clean
 clean: CMakeFiles/die.dir/clean
 clean: CMakeFiles/fix_common.dir/clean
 clean: CMakeFiles/testtrading.dir/clean
-clean: CMakeFiles/fastlog.dir/clean
+clean: CMakeFiles/nanolog.dir/clean
 
 .PHONY : clean
 
@@ -79,13 +79,13 @@ clean: CMakeFiles/fastlog.dir/clean
 # Target rules for target CMakeFiles/myAlgo.dir
 
 # All Build rule for target.
+CMakeFiles/myAlgo.dir/all: CMakeFiles/testtrading.dir/all
+CMakeFiles/myAlgo.dir/all: CMakeFiles/nanolog.dir/all
 CMakeFiles/myAlgo.dir/all: CMakeFiles/die.dir/all
 CMakeFiles/myAlgo.dir/all: CMakeFiles/fix_common.dir/all
-CMakeFiles/myAlgo.dir/all: CMakeFiles/testtrading.dir/all
-CMakeFiles/myAlgo.dir/all: CMakeFiles/fastlog.dir/all
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/depend
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target myAlgo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target myAlgo"
 .PHONY : CMakeFiles/myAlgo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -139,7 +139,7 @@ CMakeFiles/die.dir/clean:
 CMakeFiles/fix_common.dir/all:
 	$(MAKE) -f CMakeFiles/fix_common.dir/build.make CMakeFiles/fix_common.dir/depend
 	$(MAKE) -f CMakeFiles/fix_common.dir/build.make CMakeFiles/fix_common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target fix_common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target fix_common"
 .PHONY : CMakeFiles/fix_common.dir/all
 
 # Build rule for subdir invocation for target.
@@ -187,31 +187,31 @@ CMakeFiles/testtrading.dir/clean:
 .PHONY : CMakeFiles/testtrading.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/fastlog.dir
+# Target rules for target CMakeFiles/nanolog.dir
 
 # All Build rule for target.
-CMakeFiles/fastlog.dir/all:
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/depend
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target fastlog"
-.PHONY : CMakeFiles/fastlog.dir/all
+CMakeFiles/nanolog.dir/all:
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/depend
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target nanolog"
+.PHONY : CMakeFiles/nanolog.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/fastlog.dir/rule: cmake_check_build_system
+CMakeFiles/nanolog.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fastlog.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/nanolog.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/fastlog.dir/rule
+.PHONY : CMakeFiles/nanolog.dir/rule
 
 # Convenience name for target.
-fastlog: CMakeFiles/fastlog.dir/rule
+nanolog: CMakeFiles/nanolog.dir/rule
 
-.PHONY : fastlog
+.PHONY : nanolog
 
 # clean rule for target.
-CMakeFiles/fastlog.dir/clean:
-	$(MAKE) -f CMakeFiles/fastlog.dir/build.make CMakeFiles/fastlog.dir/clean
-.PHONY : CMakeFiles/fastlog.dir/clean
+CMakeFiles/nanolog.dir/clean:
+	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/clean
+.PHONY : CMakeFiles/nanolog.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -3,6 +3,8 @@
     <words>
       <w>strclientmode</w>
       <w>strversion</w>
+      <w>usec</w>
+      <w>warmup</w>
     </words>
   </dictionary>
 </component>

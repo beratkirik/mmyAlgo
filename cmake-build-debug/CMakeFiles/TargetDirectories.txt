@@ -4,4 +4,4 @@
 /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/die.dir
 /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/fix_common.dir
 /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/testtrading.dir
-/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/fastlog.dir
+/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles/nanolog.dir

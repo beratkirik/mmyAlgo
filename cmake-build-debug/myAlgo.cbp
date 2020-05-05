@@ -229,8 +229,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="fastlog">
-				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libfastlog.so" prefix_auto="0" extension_auto="0"/>
+			<Target title="nanolog">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libnanolog.so" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
@@ -246,14 +246,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 fastlog"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 nanolog"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="fastlog/fast">
-				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libfastlog.so" prefix_auto="0" extension_auto="0"/>
+			<Target title="nanolog/fast">
+				<Option output="/home/berat/CLionProjects/myAlgo/cmake-build-debug/libnanolog.so" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/berat/CLionProjects/myAlgo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
@@ -269,27 +269,24 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 fastlog/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 nanolog/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/berat/CLionProjects/myAlgo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/NanoLog.cpp">
+			<Option target="nanolog"/>
+		</Unit>
+		<Unit filename="/home/berat/CLionProjects/myAlgo/NanoLog.hpp">
+			<Option target="nanolog"/>
+		</Unit>
 		<Unit filename="/home/berat/CLionProjects/myAlgo/die.c">
 			<Option target="die"/>
 		</Unit>
 		<Unit filename="/home/berat/CLionProjects/myAlgo/die.h">
 			<Option target="die"/>
-		</Unit>
-		<Unit filename="/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.cpp">
-			<Option target="fastlog"/>
-		</Unit>
-		<Unit filename="/home/berat/CLionProjects/myAlgo/fastlog_filebuffer.h">
-			<Option target="fastlog"/>
-		</Unit>
-		<Unit filename="/home/berat/CLionProjects/myAlgo/fastlog_utils.h">
-			<Option target="fastlog"/>
 		</Unit>
 		<Unit filename="/home/berat/CLionProjects/myAlgo/fix_common.c">
 			<Option target="fix_common"/>

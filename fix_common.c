@@ -207,6 +207,7 @@ int fix_session_logon(struct fix_session *session)
 		FIX_STRING_FIELD(ResetSeqNumFlag, "Y"),
 		FIX_INT_FIELD(HeartBtInt, session->heartbtint),
 		FIX_STRING_FIELD(Password, session->password),
+        FIX_STRING_FIELD(Username, "FOO"),
 	};
 
 	logon_msg	= (struct fix_message) {
@@ -214,10 +215,10 @@ int fix_session_logon(struct fix_session *session)
 		.nr_fields	= ARRAY_SIZE(fields),
 		.fields		= fields,
 	};
-
+//    fprintf(stderr, "logon_msg :%lu, %lu, %s ", logon_msg.type, logon_msg.nr_fields,logon_msg.fields->string_value);
 	if (!session->password || !strlen(session->password))
 		logon_msg.nr_fields--;
-
+//    fprintf(stderr, "session-password :%s ", session->password);
 	fix_session_send(session, &logon_msg, 0);
 	session->active = true;
 
