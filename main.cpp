@@ -1,4 +1,4 @@
-#include "NanoLog.hpp"
+#include "simplog.h"
 extern "C" {
 #include "fix_common.h"
 #include "libtrading/compat.h"
@@ -22,6 +22,7 @@ extern "C" {
 #include <netdb.h>
 #include <cstdio>
 #include <cmath>
+#include <iostream>
 
 extern "C" {
 #include "fix_client.h"
@@ -284,13 +285,13 @@ static int fix_client_session(struct fix_session_cfg *cfg, struct fix_client_arg
 
     return ret;
 }
-
+int coid = 0;
 static unsigned long fix_new_order_single_fields(struct fix_session *session, struct fix_field *fields)
 {
     unsigned long nr = 0;
 
     fields[nr++] = FIX_STRING_FIELD(TransactTime, session->str_now);
-    fields[nr++] = FIX_STRING_FIELD(ClOrdID, "ClOrdID");
+    fields[nr++] = FIX_INT_FIELD(ClOrdID, coid++);
     fields[nr++] = FIX_STRING_FIELD(Symbol, "GARAN");
     fields[nr++] = FIX_FLOAT_FIELD(OrderQty, 100);
     fields[nr++] = FIX_STRING_FIELD(OrdType, "2");
@@ -349,7 +350,7 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
         goto exit;
     }
 //    fprintf(stderr, "System can allocate memory\n");
-    nr = fix_new_order_single_fields(session, fields);
+
 
     min_usec	= DBL_MAX;
     max_usec	= 0;
@@ -369,10 +370,17 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
     for (i = 0; i < orders; i++) {
         struct timespec before{}, after{};
         uint64_t elapsed_usec;
-
         clock_gettime(CLOCK_MONOTONIC, &before);
+        nr = fix_new_order_single_fields(session, fields);
 
         fix_session_new_order_single(session, fields, nr);
+        simplog.writeLog(SIMPLOG_INFO, "test");
+        simplog.writeLog(SIMPLOG_INFO, fields->string_value);
+//        simplog.writeLog(SIMPLOG_INFO, reinterpret_cast<const char *>(fields->tag));
+        simplog.writeLog(SIMPLOG_INFO, fields->string_8_value);
+//        simplog.writeLog(SIMPLOG_INFO, reinterpret_cast<const char *>(fields->int_value));
+
+        coid++;
 
         retry:
         if (fix_session_recv(session, &msg, FIX_RECV_FLAG_MSG_DONTWAIT) <= 0)
@@ -474,6 +482,7 @@ static enum fix_version strversion(const char *dialect)
 
 int main(int argc, char *argv[])
 {
+    simplog.setLogFile("/home/berat/CLionProjects/myAlgo/log.txt");
     enum fix_client_mode mode = FIX_CLIENT_SCRIPT;
     enum fix_version version = FIX_4_4;
     const char *target_comp_id = nullptr;
@@ -489,13 +498,8 @@ int main(int argc, char *argv[])
     int ret = 0;
     char **ap;
     int opt;
-    nanolog::initialize(nanolog::GuaranteedLogger(), "/tmp/", "nanolog", 1);
-    for (int i = 0; i < 5; ++i)
-    {
-        LOG_INFO << "Sample NanoLog: " << i;
-    }
-    nanolog::set_log_level(nanolog::LogLevel::CRIT);
-    LOG_WARN << "This log line will not be logged since we are at loglevel = CRIT";
+
+
 
     while ((opt = getopt(argc, argv, "f:h:p:d:s:t:m:n:o:r:w:")) != -1) {
         switch (opt) {
@@ -614,7 +618,6 @@ int main(int argc, char *argv[])
 
     if (close(cfg.sockfd) < 0)
         die("close");
-
 
     return ret;
 }

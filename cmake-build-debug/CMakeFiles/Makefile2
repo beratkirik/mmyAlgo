@@ -54,10 +54,10 @@ CMAKE_BINARY_DIR = /home/berat/CLionProjects/myAlgo/cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/myAlgo.dir/all
-all: CMakeFiles/die.dir/all
 all: CMakeFiles/fix_common.dir/all
 all: CMakeFiles/testtrading.dir/all
-all: CMakeFiles/nanolog.dir/all
+all: CMakeFiles/die.dir/all
+all: CMakeFiles/simplog.dir/all
 
 .PHONY : all
 
@@ -68,10 +68,10 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/myAlgo.dir/clean
-clean: CMakeFiles/die.dir/clean
 clean: CMakeFiles/fix_common.dir/clean
 clean: CMakeFiles/testtrading.dir/clean
-clean: CMakeFiles/nanolog.dir/clean
+clean: CMakeFiles/die.dir/clean
+clean: CMakeFiles/simplog.dir/clean
 
 .PHONY : clean
 
@@ -79,10 +79,10 @@ clean: CMakeFiles/nanolog.dir/clean
 # Target rules for target CMakeFiles/myAlgo.dir
 
 # All Build rule for target.
-CMakeFiles/myAlgo.dir/all: CMakeFiles/testtrading.dir/all
-CMakeFiles/myAlgo.dir/all: CMakeFiles/nanolog.dir/all
 CMakeFiles/myAlgo.dir/all: CMakeFiles/die.dir/all
+CMakeFiles/myAlgo.dir/all: CMakeFiles/simplog.dir/all
 CMakeFiles/myAlgo.dir/all: CMakeFiles/fix_common.dir/all
+CMakeFiles/myAlgo.dir/all: CMakeFiles/testtrading.dir/all
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/depend
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target myAlgo"
@@ -104,33 +104,6 @@ myAlgo: CMakeFiles/myAlgo.dir/rule
 CMakeFiles/myAlgo.dir/clean:
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/clean
 .PHONY : CMakeFiles/myAlgo.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/die.dir
-
-# All Build rule for target.
-CMakeFiles/die.dir/all:
-	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/depend
-	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target die"
-.PHONY : CMakeFiles/die.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/die.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/die.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/die.dir/rule
-
-# Convenience name for target.
-die: CMakeFiles/die.dir/rule
-
-.PHONY : die
-
-# clean rule for target.
-CMakeFiles/die.dir/clean:
-	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/clean
-.PHONY : CMakeFiles/die.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/fix_common.dir
@@ -187,31 +160,58 @@ CMakeFiles/testtrading.dir/clean:
 .PHONY : CMakeFiles/testtrading.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/nanolog.dir
+# Target rules for target CMakeFiles/die.dir
 
 # All Build rule for target.
-CMakeFiles/nanolog.dir/all:
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/depend
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target nanolog"
-.PHONY : CMakeFiles/nanolog.dir/all
+CMakeFiles/die.dir/all:
+	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/depend
+	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target die"
+.PHONY : CMakeFiles/die.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/nanolog.dir/rule: cmake_check_build_system
+CMakeFiles/die.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/nanolog.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/die.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/nanolog.dir/rule
+.PHONY : CMakeFiles/die.dir/rule
 
 # Convenience name for target.
-nanolog: CMakeFiles/nanolog.dir/rule
+die: CMakeFiles/die.dir/rule
 
-.PHONY : nanolog
+.PHONY : die
 
 # clean rule for target.
-CMakeFiles/nanolog.dir/clean:
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/clean
-.PHONY : CMakeFiles/nanolog.dir/clean
+CMakeFiles/die.dir/clean:
+	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/clean
+.PHONY : CMakeFiles/die.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/simplog.dir
+
+# All Build rule for target.
+CMakeFiles/simplog.dir/all:
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/depend
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target simplog"
+.PHONY : CMakeFiles/simplog.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/simplog.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simplog.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/simplog.dir/rule
+
+# Convenience name for target.
+simplog: CMakeFiles/simplog.dir/rule
+
+.PHONY : simplog
+
+# clean rule for target.
+CMakeFiles/simplog.dir/clean:
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/clean
+.PHONY : CMakeFiles/simplog.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

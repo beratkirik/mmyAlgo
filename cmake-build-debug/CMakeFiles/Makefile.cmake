@@ -49,8 +49,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/myAlgo.dir/DependInfo.cmake"
-  "CMakeFiles/die.dir/DependInfo.cmake"
   "CMakeFiles/fix_common.dir/DependInfo.cmake"
   "CMakeFiles/testtrading.dir/DependInfo.cmake"
-  "CMakeFiles/nanolog.dir/DependInfo.cmake"
+  "CMakeFiles/die.dir/DependInfo.cmake"
+  "CMakeFiles/simplog.dir/DependInfo.cmake"
   )

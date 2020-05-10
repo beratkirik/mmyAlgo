@@ -124,19 +124,6 @@ myAlgo/fast:
 .PHONY : myAlgo/fast
 
 #=============================================================================
-# Target rules for targets named die
-
-# Build rule for target.
-die: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 die
-.PHONY : die
-
-# fast build rule for target.
-die/fast:
-	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/build
-.PHONY : die/fast
-
-#=============================================================================
 # Target rules for targets named fix_common
 
 # Build rule for target.
@@ -163,44 +150,30 @@ testtrading/fast:
 .PHONY : testtrading/fast
 
 #=============================================================================
-# Target rules for targets named nanolog
+# Target rules for targets named die
 
 # Build rule for target.
-nanolog: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nanolog
-.PHONY : nanolog
+die: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 die
+.PHONY : die
 
 # fast build rule for target.
-nanolog/fast:
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/build
-.PHONY : nanolog/fast
+die/fast:
+	$(MAKE) -f CMakeFiles/die.dir/build.make CMakeFiles/die.dir/build
+.PHONY : die/fast
 
-NanoLog.o: NanoLog.cpp.o
+#=============================================================================
+# Target rules for targets named simplog
 
-.PHONY : NanoLog.o
+# Build rule for target.
+simplog: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simplog
+.PHONY : simplog
 
-# target to build an object file
-NanoLog.cpp.o:
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/NanoLog.cpp.o
-.PHONY : NanoLog.cpp.o
-
-NanoLog.i: NanoLog.cpp.i
-
-.PHONY : NanoLog.i
-
-# target to preprocess a source file
-NanoLog.cpp.i:
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/NanoLog.cpp.i
-.PHONY : NanoLog.cpp.i
-
-NanoLog.s: NanoLog.cpp.s
-
-.PHONY : NanoLog.s
-
-# target to generate assembly for a file
-NanoLog.cpp.s:
-	$(MAKE) -f CMakeFiles/nanolog.dir/build.make CMakeFiles/nanolog.dir/NanoLog.cpp.s
-.PHONY : NanoLog.cpp.s
+# fast build rule for target.
+simplog/fast:
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/build
+.PHONY : simplog/fast
 
 die.o: die.c.o
 
@@ -283,6 +256,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+simplog.o: simplog.c.o
+
+.PHONY : simplog.o
+
+# target to build an object file
+simplog.c.o:
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/simplog.c.o
+.PHONY : simplog.c.o
+
+simplog.i: simplog.c.i
+
+.PHONY : simplog.i
+
+# target to preprocess a source file
+simplog.c.i:
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/simplog.c.i
+.PHONY : simplog.c.i
+
+simplog.s: simplog.c.s
+
+.PHONY : simplog.s
+
+# target to generate assembly for a file
+simplog.c.s:
+	$(MAKE) -f CMakeFiles/simplog.dir/build.make CMakeFiles/simplog.dir/simplog.c.s
+.PHONY : simplog.c.s
+
 test.o: test.c.o
 
 .PHONY : test.o
@@ -319,13 +319,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... myAlgo"
-	@echo "... die"
 	@echo "... fix_common"
 	@echo "... testtrading"
-	@echo "... nanolog"
-	@echo "... NanoLog.o"
-	@echo "... NanoLog.i"
-	@echo "... NanoLog.s"
+	@echo "... die"
+	@echo "... simplog"
 	@echo "... die.o"
 	@echo "... die.i"
 	@echo "... die.s"
@@ -335,6 +332,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... simplog.o"
+	@echo "... simplog.i"
+	@echo "... simplog.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

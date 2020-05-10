@@ -396,7 +396,7 @@ int fix_session_new_order_single(struct fix_session *session,
 		.nr_fields	= nr_fields,
 		.fields		= fields,
 	};
-
+//	printf("%ld - ", new_order_single_msg.fields[1].int_value);
 	return fix_session_send(session, &new_order_single_msg, 0);
 }
 

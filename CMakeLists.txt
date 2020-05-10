@@ -22,9 +22,10 @@ add_library(fix_common SHARED
         fix_common.c)
 set_property(TARGET fix_common PROPERTY C_STANDARD 99)
 
-add_library(nanolog SHARED
-        NanoLog.hpp
-        NanoLog.cpp)
+add_library(simplog SHARED
+        simplog.h
+        simplog.c)
+set_property(TARGET simplog PROPERTY C_STANDARD 99)
 
 add_executable(myAlgo main.cpp)
 
@@ -35,7 +36,7 @@ target_include_directories(testtrading PUBLIC ${DIR_INCLUDE})
 target_include_directories(fix_common PUBLIC ${DIR_INCLUDE})
 
 #Link libraries
-target_link_libraries(myAlgo PUBLIC ${LIBS} -lm die testtrading fix_common nanolog)
+target_link_libraries(myAlgo PUBLIC ${LIBS} -lm die testtrading fix_common simplog)
 target_link_libraries(die PUBLIC ${LIBS})
 target_link_libraries(testtrading PUBLIC ${LIBS})
 target_link_libraries(fix_common PUBLIC ${LIBS})

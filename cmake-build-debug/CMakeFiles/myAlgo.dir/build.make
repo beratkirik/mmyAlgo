@@ -83,7 +83,7 @@ myAlgo: /home/berat/lib/libtrading.so
 myAlgo: libdie.so
 myAlgo: libtesttrading.so
 myAlgo: libfix_common.so
-myAlgo: libnanolog.so
+myAlgo: libsimplog.so
 myAlgo: /home/berat/lib/libtrading.so
 myAlgo: CMakeFiles/myAlgo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable myAlgo"

@@ -54,7 +54,7 @@ namespace
 	char buffer[32];
 	strftime(buffer, 32, "%Y-%m-%d %T.", gmtime);
 	char microseconds[7];
-	sprintf(microseconds, "%06llu", timestamp % 1000000);
+	sprintf(microseconds, "%06lu", timestamp % 1000000);
 	os << '[' << buffer << microseconds << ']';
     }
 
