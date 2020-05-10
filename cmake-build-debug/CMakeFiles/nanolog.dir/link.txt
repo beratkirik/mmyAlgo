@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libnanolog.so -o libnanolog.so CMakeFiles/nanolog.dir/NanoLog.cpp.o 

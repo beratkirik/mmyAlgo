@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/berat/CLionProjects/myAlgo/NanoLog.cpp
+NanoLog.hpp
+/home/berat/CLionProjects/myAlgo/NanoLog.hpp
+cstring
+-
+chrono
+-
+ctime
+-
+thread
+-
+tuple
+-
+atomic
+-
+queue
+-
+fstream
+-
+
+/home/berat/CLionProjects/myAlgo/NanoLog.hpp
+cstdint
+-
+memory
+-
+string
+-
+iosfwd
+-
+type_traits
+-
+
