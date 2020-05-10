@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 #include "test.h"
+#include "simplog.h"
 
 struct fcontainer *fcontainer_new(void)
 {
@@ -341,25 +342,29 @@ void fprintmsg(FILE *stream, struct fix_message *msg)
 
 void fprintmsg_iov(FILE *stream, struct fix_message *msg)
 {
-	char delim = '|';
-	int i;
+    char delim = '|';
+    int i;
 
-	if (!msg)
-		return;
+    if (!msg)
+        return;
+// loglar kendi oluşturdugumuz log2 dosyasına eklendi.
+    FILE * fp ;
+    fp = fopen("/home/berat/CLionProjects/myAlgo/log2.txt","a+");
+    fprintf(fp,"incoming message : ");
+    for (i = 0; i < 2; ++i) {
+        const char *start = msg->iov[i].iov_base;
+        unsigned int len = msg->iov[i].iov_len;
+        const char *end;
 
-	for (i = 0; i < 2; ++i) {
-		const char *start = msg->iov[i].iov_base;
-		unsigned int len = msg->iov[i].iov_len;
-		const char *end;
+        while ((end = memchr(start, 0x01, len))) {
+            fprintf(fp, "%c%.*s", delim, (int)(end - start), start);
+            len -= (end - start + 1);
+            start = end + 1;
+        }
 
-		while ((end = memchr(start, 0x01, len))) {
-			fprintf(stdout, "%c%.*s", delim, (int)(end - start), start);
-			len -= (end - start + 1);
-			start = end + 1;
-		}
-	}
+    }
 
-	fprintf(stdout, "%c\n", delim);
-
-	return;
+    fprintf(fp, "%c\n", delim);
+    fclose(fp);
+    return;
 }

@@ -1,1 +1,1 @@
-/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libtesttrading.so -o libtesttrading.so CMakeFiles/testtrading.dir/test.c.o   -L/home/berat/lib  -Wl,-rpath,/home/berat/lib -ltrading 
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libtesttrading.so -o libtesttrading.so CMakeFiles/testtrading.dir/test.c.o   -L/home/berat/lib  -Wl,-rpath,/home/berat/lib:/home/berat/CLionProjects/myAlgo/cmake-build-debug -ltrading libsimplog.so 

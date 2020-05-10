@@ -1,0 +1,86 @@
+    // mysql connection
+    MYSQL *conn;
+    MYSQL_RES *res;
+    MYSQL_ROW row;
+
+    char const *server = "localhost";
+    char const *user = "root";
+    char const *password = "berat"; /* set me first */
+    char const *database = "myAlgo";
+
+    conn = mysql_init(nullptr);
+    /* Connect to database */
+    if (!mysql_real_connect(conn, server,
+                            user, password, database, 0, NULL, 0)) {
+        fprintf(stderr, "%s\n", mysql_error(conn));
+        exit(1);
+    }
+    //const char query[300] = nullptr;
+    // mysql connection
+
+        //mysql insert
+
+//        snprintf(const_cast<char *>(query),
+//                 (size_t) "INSERT INTO myFixLogs(clientOrderID, orderStatus, stockName, orderQty , orderPrice) VALUES ('%4','0','%s' , '%f' , '%f')", fields[2].string_value, fields[3].float_value, fields[6].float_value);
+
+        if (mysql_query(conn, "INSERT INTO myFixLogs(clientOrderID, orderStatus, stockName, orderQty , orderPrice) VALUES ('4','1','KOZAL' , '100' , '50')")) {
+            fprintf(stderr, "%s\n", mysql_error(conn));
+
+
+            //mysql insert
+
+
+                    //mysql kapat
+
+                    mysql_close(conn);
+                    // mysql kapat
+
+
+//        simplog.writeLog(SIMPLOG_INFO, "test");
+//        simplog.writeLog(SIMPLOG_INFO, fields->string_value);
+//        simplog.writeLog(SIMPLOG_INFO, reinterpret_cast<const char *>(fields->tag));
+//        simplog.writeLog(SIMPLOG_INFO, fields->string_8_value);
+//        simplog.writeLog(SIMPLOG_INFO, reinterpret_cast<const char *>(fields->int_value));
+
+
+
+        // fix giden mesaj loglama
+        FILE * fp ;
+        fp = fopen("/home/berat/CLionProjects/myAlgo/log2.txt","a+");
+        fprintf(fp,"outgoing message : ");
+        fprintf(fp,"|%s|%ld|%s|%f", fields[0].string_value, fields[1].int_value, fields[2].string_value, fields[3].float_value);
+        fprintf(fp,"|%s|%s|%f|\n", fields[4].string_value, fields[5].string_value, fields[6].float_value);
+        fclose(fp);
+        //
+
+        "INSERT INTO myFixLogs(clientOrderID, orderStatus, stockName, orderQty , orderPrice) VALUES ('4','1','KOZAL' , '100' , '50')"
+
+        -- auto-generated definition
+        create table myPositions
+        (
+            id           int auto_increment
+                primary key,
+            timestamp    timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP,
+            stockName    varchar(20)                         null,
+            quantity     int                                 null,
+            averagePrice float                               null,
+            amount       float                               null,
+            constraint myPositions_stockName_uindex
+                unique (stockName)
+        );
+
+create definer = root@localhost trigger update_myPositions
+    before update
+    on myOrders
+    for each row
+begin
+		IF (SELECT count(*) FROM myPositions WHERE myPositions.stockName = NEW.stockName) = 0 THEN
+			INSERT INTO myPositions(quantity, averagePrice, stockName)
+			VALUES(NEW.orderQty, NEW.averagePrice, NEW.stockName);
+		Else
+		    UPDATE myPositions
+			SET averagePrice = (((quantity*averagePrice)+(NEW.orderQty*NEW.averagePrice))/(quantity+NEW.orderQty)), quantity = quantity+NEW.orderQty
+		        WHERE stockName = NEW.stockName;
+		END IF;
+    END;
+

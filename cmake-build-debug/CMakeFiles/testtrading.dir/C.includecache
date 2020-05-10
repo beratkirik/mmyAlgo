@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/berat/CLionProjects/myAlgo/simplog.h
+stdbool.h
+-
+
 /home/berat/CLionProjects/myAlgo/test.c
 libtrading/proto/fix_message.h
 -
@@ -19,6 +23,8 @@ stdio.h
 -
 test.h
 /home/berat/CLionProjects/myAlgo/test.h
+simplog.h
+/home/berat/CLionProjects/myAlgo/simplog.h
 
 /home/berat/CLionProjects/myAlgo/test.h
 

@@ -23,7 +23,9 @@ extern "C" {
 #include <cstdio>
 #include <cmath>
 #include <iostream>
-
+#include <string>
+#include <sstream>
+#include <mysql/mysql.h>
 extern "C" {
 #include "fix_client.h"
 #include "test.h"
@@ -285,18 +287,18 @@ static int fix_client_session(struct fix_session_cfg *cfg, struct fix_client_arg
 
     return ret;
 }
-int coid = 0;
+int coid = 5000;
 static unsigned long fix_new_order_single_fields(struct fix_session *session, struct fix_field *fields)
 {
     unsigned long nr = 0;
 
     fields[nr++] = FIX_STRING_FIELD(TransactTime, session->str_now);
     fields[nr++] = FIX_INT_FIELD(ClOrdID, coid++);
-    fields[nr++] = FIX_STRING_FIELD(Symbol, "GARAN");
-    fields[nr++] = FIX_FLOAT_FIELD(OrderQty, 100);
+    fields[nr++] = FIX_STRING_FIELD(Symbol, "AKBNK");
+    fields[nr++] = FIX_FLOAT_FIELD(OrderQty, 500);
     fields[nr++] = FIX_STRING_FIELD(OrdType, "2");
     fields[nr++] = FIX_STRING_FIELD(Side, "1");
-    fields[nr++] = FIX_FLOAT_FIELD(Price, 100);
+    fields[nr++] = FIX_FLOAT_FIELD(Price, 6);
 
     return nr;
 }
@@ -312,6 +314,26 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
     int ret = -1;
     int orders;
     int i;
+
+    // mysql connection
+    MYSQL *conn;
+    MYSQL_RES *res;
+    MYSQL_ROW row;
+
+    char const *server = "localhost";
+    char const *user = "root";
+    char const *password = "berat";
+    char const *database = "myAlgo";
+
+    conn = mysql_init(nullptr);
+    /* Connect to database */
+    if (!mysql_real_connect(conn, server,
+                            user, password, database, 0, nullptr, 0)) {
+        fprintf(stderr, "%s\n", mysql_error(conn));
+        exit(1);
+    }
+    char query[500] = {0};
+    // mysql connection
 
     if (!arg)
         goto exit;
@@ -374,13 +396,16 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
         nr = fix_new_order_single_fields(session, fields);
 
         fix_session_new_order_single(session, fields, nr);
-        simplog.writeLog(SIMPLOG_INFO, "test");
-        simplog.writeLog(SIMPLOG_INFO, fields->string_value);
-//        simplog.writeLog(SIMPLOG_INFO, reinterpret_cast<const char *>(fields->tag));
-        simplog.writeLog(SIMPLOG_INFO, fields->string_8_value);
-//        simplog.writeLog(SIMPLOG_INFO, reinterpret_cast<const char *>(fields->int_value));
 
-        coid++;
+        //mysql insert başlangıç
+        snprintf(query,500,"INSERT INTO myFixLogs(clientOrderID, orderStatus, stockName, orderQty , orderPrice) VALUES ('%ld','1','%s' , '%f' , '%f')", fields[1].int_value, fields[2].string_value, fields[3].float_value, fields[6].float_value);
+        if (mysql_query(conn, query)) {
+            fprintf(stderr, "%s\n", mysql_error(conn));
+            }
+        // mysql insert bitiş
+        // client order id arttirmak icin eklenmistir
+        //coid++;
+        // client order id ekleme işlemi biter.
 
         retry:
         if (fix_session_recv(session, &msg, FIX_RECV_FLAG_MSG_DONTWAIT) <= 0)
@@ -388,6 +413,10 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
 
         if (!fix_message_type_is(msg, FIX_MSG_TYPE_EXECUTION_REPORT))
             goto retry;
+
+        // test
+        fprintmsg_iov(stdout, msg);
+        // test biter
 
         clock_gettime(CLOCK_MONOTONIC, &after);
 
@@ -402,10 +431,17 @@ static int fix_client_order(struct fix_session_cfg *cfg, struct fix_client_arg *
             fprintf(file, "%" PRIu64 "\n", elapsed_usec);
     }
 
+    //mysql kapat
+    res = mysql_use_result(conn);
+    mysql_free_result(res);
+    mysql_close(conn);
+    // mysql kapat
+
     avg_usec = total_usec / orders;
 
     fprintf(stdout, "Messages sent: %d\n", orders);
     fprintf(stdout, "Round-trip time: min/avg/max = %.1lf/%.1lf/%.1lf μs\n", min_usec, avg_usec, max_usec);
+
 
     if (session->active) {
         ret = fix_session_logout(session, nullptr);
@@ -540,6 +576,7 @@ int main(int argc, char *argv[])
                 usage();
         }
     }
+
 
     if (!port || !host)
         usage();

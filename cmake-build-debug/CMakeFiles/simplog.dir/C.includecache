@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/berat/CLionProjects/myAlgo/simplog.c
+stdio.h
+-
+time.h
+-
+stdarg.h
+-
+errno.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+stdlib.h
+-
+stdbool.h
+-
+execinfo.h
+-
+stdint.h
+-
+libproc.h
+-
+simplog.h
+/home/berat/CLionProjects/myAlgo/simplog.h
+
+/home/berat/CLionProjects/myAlgo/simplog.h
+stdbool.h
+-
+

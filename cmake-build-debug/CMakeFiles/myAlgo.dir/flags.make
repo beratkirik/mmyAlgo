@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/berat/include 
+CXX_INCLUDES = -I/home/berat/include -I/usr/include/mysql 
 

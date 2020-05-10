@@ -79,10 +79,10 @@ clean: CMakeFiles/simplog.dir/clean
 # Target rules for target CMakeFiles/myAlgo.dir
 
 # All Build rule for target.
-CMakeFiles/myAlgo.dir/all: CMakeFiles/die.dir/all
-CMakeFiles/myAlgo.dir/all: CMakeFiles/simplog.dir/all
-CMakeFiles/myAlgo.dir/all: CMakeFiles/fix_common.dir/all
 CMakeFiles/myAlgo.dir/all: CMakeFiles/testtrading.dir/all
+CMakeFiles/myAlgo.dir/all: CMakeFiles/die.dir/all
+CMakeFiles/myAlgo.dir/all: CMakeFiles/fix_common.dir/all
+CMakeFiles/myAlgo.dir/all: CMakeFiles/simplog.dir/all
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/depend
 	$(MAKE) -f CMakeFiles/myAlgo.dir/build.make CMakeFiles/myAlgo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target myAlgo"
@@ -136,7 +136,7 @@ CMakeFiles/fix_common.dir/clean:
 # Target rules for target CMakeFiles/testtrading.dir
 
 # All Build rule for target.
-CMakeFiles/testtrading.dir/all:
+CMakeFiles/testtrading.dir/all: CMakeFiles/simplog.dir/all
 	$(MAKE) -f CMakeFiles/testtrading.dir/build.make CMakeFiles/testtrading.dir/depend
 	$(MAKE) -f CMakeFiles/testtrading.dir/build.make CMakeFiles/testtrading.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target testtrading"
@@ -144,7 +144,7 @@ CMakeFiles/testtrading.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testtrading.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testtrading.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/testtrading.dir/rule

@@ -80,6 +80,7 @@ testtrading_EXTERNAL_OBJECTS =
 libtesttrading.so: CMakeFiles/testtrading.dir/test.c.o
 libtesttrading.so: CMakeFiles/testtrading.dir/build.make
 libtesttrading.so: /home/berat/lib/libtrading.so
+libtesttrading.so: libsimplog.so
 libtesttrading.so: CMakeFiles/testtrading.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/berat/CLionProjects/myAlgo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library libtesttrading.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testtrading.dir/link.txt --verbose=$(VERBOSE)
