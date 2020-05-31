@@ -1,0 +1,3 @@
+[2020-05-10 06:09:04]	LOG   : Log file set to 'log.txt'
+[2020-05-10 06:09:07]	LOG   : Log file set to 'log.txt'
+[2020-05-10 06:09:16]	LOG   : Log file set to 'log.txt'
